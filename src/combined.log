@@ -1,0 +1,178 @@
+
+{
+  status: 'Bad reques',
+  message: 'This is error',
+  data: '........',
+  level: '\x1B[31merror\x1B[39m',
+  label: 'Boilar_Plate',
+  timestamp: '2021-10-17T18:22:44.724Z'
+}
+{
+  status: 'Bad reques',
+  message: 'This is error',
+  data: '........',
+  level: '\x1B[31merror\x1B[39m',
+  label: 'Boilar_Plate',
+  timestamp: '2021-10-17T18:24:41.923Z'
+}
+{
+  status: 'Bad reques',
+  message: 'This is error',
+  data: '........',
+  level: '\x1B[31merror\x1B[39m',
+  label: 'Boilar_Plate',
+  timestamp: '2021-10-17T18:25:25.264Z'
+}
+{
+  status: 'Bad reques',
+  message: 'This is error',
+  data: '........',
+  level: '\x1B[31merror\x1B[39m',
+  label: 'Boilar_Plate'
+}
+{
+  status: 'Bad reques',
+  message: 'This is error',
+  data: '........',
+  level: '\x1B[31merror\x1B[39m',
+  label: 'Boilar_Plate',
+  timestamp: '2021-10-17T18:38:33.224Z'
+}
+{
+  status: 'Bad reques',
+  message: 'This is error',
+  data: '........',
+  level: '\x1B[31merror\x1B[39m',
+  label: 'Boilar_Plate',
+  timestamp: '2021-10-17T18:41:11.281Z'
+}
+{
+  status: 200,
+  message: 'Login successfull',
+  data: { token: 'tyghb5265' },
+  level: '\x1B[32minfo\x1B[39m',
+  label: 'Boilar_Plate',
+  timestamp: '2021-10-17T18:41:11.309Z'
+}
+{
+  status: 400,
+  message: 'This is error',
+  data: {},
+  level: '\x1B[31merror\x1B[39m'
+}
+{
+  status: 200,
+  message: 'Login successfull',
+  data: { token: 'tyghb5265' },
+  level: '\x1B[32minfo\x1B[39m'
+}
+{
+  status: 200,
+  message: 'Login successfull',
+  data: { userid: '45845' },
+  level: '\x1B[32minfo\x1B[39m'
+}
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+{ message: 'creating the user...', level: '\x1B[32minfo\x1B[39m' }
+undefined [undefined] [32minfo[39m: creating the user...
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 12dfghb3
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 12345
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456hh
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456hh
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456hh
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456hh
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456hh
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456hh
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456hh
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456hh
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456hh
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456hh
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456hh
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 1235456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 1235456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 1235456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 1235456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 1235456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 1235456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 1235456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 1235456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 1235456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 1235456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 1235456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 12k3456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: creating the user...
+undefined [undefined] [32minfo[39m: creating the user...
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456
+undefined [undefined] [32minfo[39m: Authenticating email isma@gmail.com and password 123456

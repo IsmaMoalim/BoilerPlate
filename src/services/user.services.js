@@ -4,11 +4,11 @@ const jwt = require('jsonwebtoken')
 let { modeldata } = require('../models')
 
 // cheks weather userid id is exist or not 
-const isIDExist = (id) =>{
-    if (modeldata.isIDExist(id)){
+const isIDExist = (id) => {
+    if (modeldata.isIDExist(id)) {
         return true;
     }
-        return false;
+    return false;
 }
 
 // get getall fucntion in the model 
@@ -17,14 +17,14 @@ const getAllUsers = async () => {
 }
 
 // get getuser fucntion in the model by passing userId
-const getuser = (id) =>{
+const getuser = (id) => {
     result = modeldata.getUserByID(id);
     return result;
-    
+
 }
 
 // get create fucntion in the model by passing user parameter 
-const createuser = (user) =>{
+const createuser = (user) => {
     result = modeldata.create(user);
     return result;
 }
@@ -36,7 +36,7 @@ const updateU = (data) => {
 }
 
 // get delete fucntion in the model by passing id as parameter 
-const deleteuser = (id) =>{
+const deleteuser = (id) => {
     result = modeldata.del(id);
     return result;
 }

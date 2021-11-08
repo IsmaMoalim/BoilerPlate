@@ -11,6 +11,28 @@ let morganmiddleware = require('./middleware/morgan');
 let {ApiError} = require('./payload/ApiErrors')
 let cors = require('cors');
 let helmet = require('helmet')
+let i18n  = require('i18n')
+let cookieParser = require('cookie-parser')
+
+app.use(cookieParser());
+app.use(i18n.init)
+
+/**
+ * Locale Configuration
+ */
+ i18n.configure({
+    // setup some locales - other locales default to en silently
+    locales: ['en', 'es', 'so'],
+
+    // you may alter a site wide default locale
+    defaultLocale: 'en',
+
+    // sets a custom cookie name to parse locale settings from
+    cookie: 'currentLocale',
+
+    // where to store json files - defaults to './locales'
+    directory: __dirname + '/locales'
+});
 
 //Middlewares 
 app.use(morganmiddleware)

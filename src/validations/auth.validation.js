@@ -1,8 +1,8 @@
 const joi = require('joi');
 
 const login = joi.object({
-    email : joi.string().optional().email(),
-    password : joi.string().required(),
+    id : joi.string().required(),
+    username : joi.string().required(),
 
 });
 

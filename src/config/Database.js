@@ -20,22 +20,20 @@ async function checkConnection (){
     console.log('Connected to Database');
 
     return await connection
-    // let result = await connection.execute('select * from users')
-    // console.log(result);
-    // connection.close();
     }
     catch(err){
         console.error(err);
     }
 
 }
-checkConnection();
+// checkConnection();
 
 async function getAllUser(query) {
   
     try {
      connection = await checkConnection();
     let result = await connection.execute(query);
+    connection.commit();
     return await util.converObject(result)
 
     }
@@ -45,21 +43,6 @@ async function getAllUser(query) {
     
 }
 
-// async function getUseridAndUsername (userid, username) {
-
-//     try {
-//         connection = await checkConnection()
-//         let result = await connection.execute(userid,username)
-
-//     }
-
-//     catch(err){
-//         console.error(err)
-//     }
-
-//  }
-
 module.exports = {
-    getAllUser,
-   // getUseridAndUsername
+    getAllUser
 }

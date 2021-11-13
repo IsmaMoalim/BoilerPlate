@@ -1,89 +1,53 @@
 let status = require('http-status');
 let logger = require('../config/logger');
-let handleAsync = require('../utils/util')
-const { userServices } = require('../services');
-let { ApiError } = require('../payload/ApiErrors');
+let { handleAsync } = require('../utils/util')
+let { userServices } = require('../services');
 let { ApiResponses } = require('../payload/ApiResponses');
 let database = require('../config/Database');
 
-/** 
- *This fucntion calls getAll in the services that carry getAllUsers directelly without passing any parameter.
- */
 const getAllUsers = async (req, res) => {
   let result = await userServices.getAllUsers();
-  res.status(status.OK).send(new ApiResponses(status.OK, "OK", result));
+  res.status(status.OK).send(new ApiResponses(status.OK, "waa la helay", result));
 };
 
-const getDataFromdb = async (req, res) => {
-  let query = 'select * from users'
-  let result = await database.getAllUsers(query);
-  console.log(result);
-  res.status(status.OK).send(new ApiResponses(status.OK, 'get it', result))
-}
 
-// id req from the body and get all info about specific user
-const getuserByID = (req, res) => {
-  let userid = req.body;
-  data = userServices.getuser(userid.id)
-  res.status(status.OK).send(new ApiResponses(status.OK, 'get it', data))
-}
+const getuserByID = handleAsync( async (req, res) => {
+  let  resp = await userServices.isIDExist(req.params.userid)
+  if(resp) {
+    let  resp = await userServices.getuser(req.params.userid)
+     return res.status(status.OK).send(new ApiResponses(status.OK, 'got it', resp))
+    }
+});
 
-const createUser = (req, res) => {
-  let user = req.body;
+const createUser = handleAsync( async (req, res) => {
+  let data = req.body;
   logger.info('creating the user...')
-  if (userServices.isIDExist(user.id)) {
-
-    return res.status(status.NOT_ACCEPTABLE)
-      .send(new ApiError(status.NOT_ACCEPTABLE, 'this userID is already exist'))
-
+  let  resp = await userServices.isEmailExist(data.email)
+  if(resp) {
+  let  resp = await userServices.createuser(data.email)
+   return res.status(status.OK).send(new ApiResponses(status.OK, 'Created Succesfully', resp))
   }
+ });
 
-  data = userServices.createuser(user)
-  if (data) {
-    return res.status(status.OK).send(new ApiResponses(status.OK, 'Created successfully', data))
 
+const updateUser = handleAsync( async (req, res) => {
+  let data = req.body;
+  logger.info('Updating the user...')
+  let  resp = await userServices.isIDExist(data.userid)
+  if(resp) {
+  let  resp = await userServices.updateUser(data)
+   return res.status(status.OK).send(new ApiResponses(status.OK, 'Updated Succesfully', resp))
   }
+});
 
-  return res.status(status.OK).send("something went wrong");
-
-}
-
-// before it update check the id existance, if its exist the update.
-const updateUser = (req, res) => {
-  let id = req.body;
-  console.log(id);
-  if (!userServices.isIDExist(id.id)) {
-
-    return res.status(status.NOT_ACCEPTABLE)
-      .send(new ApiError(status.NOT_ACCEPTABLE, 'This ID Does not exist', 'This ID Does not exist'))
-
+const deleteUser = handleAsync( async (req, res) => {
+ let  resp = await userServices.isIDExist(req.params.userid)
+  if(resp) {
+  let  resp = await userServices.deleteuser(req.params.userid)
+   return res.status(status.OK).send(new ApiResponses(status.OK, 'Deleted Succesfully', resp))
   }
+});
 
-  result = userServices.updateU(id)
-  if (result) {
-    return res.status(status.OK).send(new ApiResponses(status.OK, 'Updated Successfully', result))
-
-  }
-
-}
-
-// before you delete check the id existance, if it exist the delete.
-const deleteUser = (req, res) => {
-  data = req.body;
-  if (!userServices.isIDExist(data.id)) {
-
-    return res.status(status.NOT_ACCEPTABLE)
-      .send(new ApiError(status.NOT_ACCEPTABLE, ' This ID Does not exist', 'This ID Does not exist'))
-  }
-
-  result = userServices.deleteuser(data)
-  if (result) {
-    return res.status(status.OK).send(new ApiResponses(status.OK, 'Deleted Succesfully', result))
-
-  }
-}
-
-// exporting the functions
 module.exports = {
 
   getAllUsers,
@@ -91,5 +55,5 @@ module.exports = {
   createUser,
   updateUser,
   deleteUser,
-  getDataFromdb
+  // getDataFromdb
 }

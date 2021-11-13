@@ -1,21 +1,18 @@
 let joi = require('joi');
 
 const createUser = joi.object({
-    id: joi.number().required(),
-    first_name: joi.string().required(),
-    last_name: joi.string().required(),
-    age: joi.number().required().min(18).max(120),
-    email : joi.string().optional().email(),
-    Password: joi.string().required
+    fullName: joi.string().required(),
+    email: joi.string().required(),
+    password: joi.string().required(),
+    confirmPassword: joi.ref('password'),
 });
 
 
 const updateUser = joi.object({
-    id: joi.number().required(),
-    first_name: joi.string().required(),
-    last_name: joi.string().required(),
-    age: joi.number().required().min(18).max(120),
-    email : joi.string().optional().email(),
+    userid: joi.string().required(),
+    fullName: joi.string().required(),
+    email: joi.string().required(),
+    password: joi.string().required(),
 });
 
 module.exports = {

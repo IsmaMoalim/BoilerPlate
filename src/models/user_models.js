@@ -1,79 +1,64 @@
-// Like Mongo DB/ Database
- const database = require('../config/Database')
+const database = require('../config/Database')
 
-const users = [{
-    id: 100,
-    first_name: "ismail",
-    last_name: "Ahmed",
-    age: 50,
-    email: "isma@gmail.com",
-    password: 123456
-},
-{
-
-    id: 101,
-    first_name: "shayan",
-    last_name: "mohan",
-    age: 25,
-    email: "shayan@gmail.com",
-    password: 1234
-}
-]
-
-// get All users 
 const getAllUsers =  async() =>{
-    return await database.getAllUser(`SELECT *  FROM users`);
+    let query = 'select * from users'
+    return await database.getAllUser(query)
 }
 
-const getUserIdAndUserName =  async(userid, username) =>{
-    return await database.getAllUser(`SELECT *  FROM users where userid = ${userid} and username = '${username}'`);
+const getUserEmailAndPasword = async (email, password) => {
+    console.log("hello");
+    let query = `SELECT U.USERID, U.FULLNAME, U.EMAIL, R.ROLENAME
+    FROM USERS U
+             INNER JOIN USERROLE UR on U.USERID = UR.userId
+             INNER JOIN ROLES R on UR.roleId = R.ROLEID
+    WHERE EMAIL = '${email}'
+      AND PASSWORD = '${password}'
+      AND ACTIVE = 1`
+   return await database.getAllUser(query)                          
 }
 
-// get userById
-const getUserByID = (id) =>{
-    return users.filter(u => u.id == id);
+const getUserByID = async (userid) =>{
+    let query = `select * from users where userid = ${userid}`
+    return await database.getAllUser(query);
 }
 
-// getUserByEmailAndPassword
-const getUserByEmailAndPassword = (email, password) =>{
-    return users.filter(u => u.email == email && u.password == password);
+const create = async (user) =>{
+    let email = user.email;
+    let password = user.password;
+    let fullName = user.fullName;
+    let active = 1;
 
-    // erro accures here
+    let query = `INSERT INTO USERS (USERID, EMAIL, PASSWORD, FULLNAME, ACTIVE)
+    VALUES (userid_sq.nextval, '${email}', '${password}', '${fullName}',${active})`
+    return await database.getAllUser(query)
 }
 
-/* Adding or creating new user */
-const create = (user) =>{
-    users.push(user)
-    return true
+const isIDExist = async (userid) =>{
+    let query = `select * from users where userid = ${userid}`
+    return await database.getAllUser(query);
 }
 
-// making filter the exist user id's
-const isIDExist = (id) =>{
-    return users.filter(u=> u.id == id).length
+const isEmailExist = async (email) =>{
+    let query = `select * from users where email = '${email}'`
+    return await database.getAllUser(query);
 }
 
-// update user by using filter with map
-const update = (data) =>{
-    new_user = users.filter(u=> u.id === data.id)
-    new_user.map((value,index) => { 
-        new_user[index].first_name = data.first_name;
-        new_user[index].last_name = data.last_name;
-        new_user[index].age = data.age;
-        new_user[index].email = data.email;
-    });
-    return true
+const update = async (user) =>{
+    let userid = user.userid
+    let fullname = user.fullName;
+    let email = user.email;
+    let password = user.password;
+    let query = `update users set fullname = '${fullname}', email = '${email}', password = '${password}'
+                        where userid = ${userid} `
+    return await database.getAllUser(query)
+ 
 }
 
-// delete the user using filter with map to get the index you want to delete
-const del = (id) =>{
-    new_user = users.filter(u=> u.id == id.id)
-    new_user.map(function (value, index){
-        users.splice(index, 1);
-    });
-    return true;
+const del = async (userid) =>{
+    let query = `delete from users where userid = ${userid}`
+    return await database.getAllUser(query)
 }
 
-// Exporting the functions
 module.exports ={
     getAllUsers,
     getUserByID,
@@ -81,6 +66,6 @@ module.exports ={
     isIDExist,
     update,
     del,
-    getUserByEmailAndPassword,
-    getUserIdAndUserName
+    getUserEmailAndPasword,
+    isEmailExist
 }

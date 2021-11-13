@@ -50,9 +50,9 @@ app.use((req,res,next) =>{
 });
 
 // All error handaling exceptions
-app.use((err, req, res, next) => {
-    res.status(401).send(err)
-})
+// app.use((err, req, res, next) => {
+//     res.status(401).send(err)
+// })
 
 
 app.listen(port, (req,res) =>{

@@ -1,52 +1,53 @@
-const jwt = require('jsonwebtoken')
-
-// requiring the models 
 let { modeldata } = require('../models')
+let {ApiError} = require('../payload/ApiErrors')
 
-// cheks weather userid id is exist or not 
-const isIDExist = (id) => {
-    if (modeldata.isIDExist(id)) {
-        return true;
+const isIDExist = async(userid) => {
+    let resp = await modeldata.isIDExist(userid);
+    if(resp.length <= 0){
+        throw new ApiError (401, 'This ID is not Exist')
     }
-    return false;
+    return true
 }
 
-// get getall fucntion in the model 
+const isEmailExist = async(email) => {
+    let resp = await modeldata.isEmailExist(email);
+    if(resp.length > 0){
+        throw new ApiError (401, 'This Email Has been Already Exist')
+    }
+    return true
+}
+
 const getAllUsers = async () => {
-    return modeldata.getAllUsers();
+    let resp = modeldata.getAllUsers()
+    return await resp;
 }
 
-// get getuser fucntion in the model by passing userId
-const getuser = (id) => {
-    result = modeldata.getUserByID(id);
-    return result;
-
+const getuser = async (userid) => {
+    result =  modeldata.getUserByID(userid);
+    return await result;
 }
 
-// get create fucntion in the model by passing user parameter 
 const createuser = (user) => {
     result = modeldata.create(user);
     return result;
 }
 
-// get update fucntion in the model by passing user as parameter 
-const updateU = (data) => {
-    result = modeldata.update(data);
-    return result;
+const updateUser = async (data) => {
+    result = await modeldata.update(data);
+    return  await result;
 }
 
-// get delete fucntion in the model by passing id as parameter 
-const deleteuser = (id) => {
-    result = modeldata.del(id);
-    return result;
+const deleteuser = async (userid) => {
+    result = await modeldata.del(userid);
+    return await result;
 }
 
-// Exporting the functions
 module.exports = {
     isIDExist,
     getAllUsers,
     getuser,
     createuser,
-    updateU,
-    deleteuser
+    updateUser,
+    deleteuser,
+    isEmailExist
 }
